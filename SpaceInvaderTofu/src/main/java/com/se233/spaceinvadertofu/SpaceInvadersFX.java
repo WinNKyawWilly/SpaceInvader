@@ -222,19 +222,19 @@ public class SpaceInvadersFX extends Application {
 
     private void setPlayer() {
         tank = new Sprite();
-        tank.setImage("/images/tank.png");
+        tank.setImage("assets/images/tank.png");
         tank.setPosition(APP_WIDTH/2 - SPACE/2, APP_HEIGHT - SPACE);
         tank.render(gc);
     }
 
     private void setInitialLives() {
         secondTank = new Sprite();
-        secondTank.setImage("/images/tank.png");
+        secondTank.setImage("assets/images/tank.png");
         secondTank.setPosition(SCENE_WIDTH + 3 * SPACE, 10);
         secondTank.render(gc);
 
         thirdTank = new Sprite();
-        thirdTank.setImage("/images/tank.png");
+        thirdTank.setImage("assets/images/tank.png");
         thirdTank.setPosition(SCENE_WIDTH + 4 * SPACE, 10);
         thirdTank.render(gc);
     }
@@ -586,7 +586,7 @@ public class SpaceInvadersFX extends Application {
 
     private void shootPlayer() {
         Sprite alienBomb = new Sprite();
-        alienBomb.setImage("/images/missile.png");
+        alienBomb.setImage("assets/images/missile.png");
         for (int i = (int)(Math.random() * currentEnemies.length - 1); i >= 0; i--) {
             if (PLAYER_SHOT) {
                 break;
@@ -619,7 +619,7 @@ public class SpaceInvadersFX extends Application {
     private void setExplosion(Sprite victim) {
         EXPLOSION = true;
         explosion = new Sprite();
-        explosion.setImage(true, "/images/explosion.gif");
+        explosion.setImage(true, "assets/images/explosion.gif");
         explosion.setPosition(victim.getPositionX() - 10, victim.getPositionY() - 10);
         explosion.render(gc);
     }
@@ -697,18 +697,18 @@ public class SpaceInvadersFX extends Application {
     }
 
     private void setSoundEffects() {
-        shootEffect = new SoundEffect("/sounds/shoot.wav");
-        killEffect = new SoundEffect("/sounds/alienKilled.wav");
-        ufoEffect = new SoundEffect("/sounds/ufo.wav");
-        explosionEffect = new SoundEffect("/sounds/explosion.wav");
+        shootEffect = new SoundEffect("assets/sounds/shoot.wav");
+        killEffect = new SoundEffect("assets/sounds/alienKilled.wav");
+        ufoEffect = new SoundEffect("assets/sounds/ufo.wav");
+        explosionEffect = new SoundEffect("assets/sounds/explosion.wav");
         setAlienMoveSounds();
     }
 
     private void setAlienMoveSounds() {
-        moveEffects.add(new SoundEffect("/sounds/alienMove.wav"));
-        moveEffects.add(new SoundEffect("/sounds/alienMove2.wav"));
-        moveEffects.add(new SoundEffect("/sounds/alienMove3.wav"));
-        moveEffects.add(new SoundEffect("/sounds/alienMove4.wav"));
+        moveEffects.add(new SoundEffect("assets/sounds/alienMove.wav"));
+        moveEffects.add(new SoundEffect("assets/sounds/alienMove2.wav"));
+        moveEffects.add(new SoundEffect("assets/sounds/alienMove3.wav"));
+        moveEffects.add(new SoundEffect("assets/sounds/alienMove4.wav"));
     }
 
     private void playMoveEffect() {
