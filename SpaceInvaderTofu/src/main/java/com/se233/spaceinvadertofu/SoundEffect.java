@@ -7,7 +7,7 @@ public class SoundEffect {
     private AudioClip soundEffect;
 
     public SoundEffect(String filePath) {
-        soundEffect = new AudioClip(getClass().getResource(filePath).toExternalForm());
+        soundEffect = new AudioClip(HelloApplication.class.getResource(filePath).toExternalForm());
     }
 
     public void playClip() {

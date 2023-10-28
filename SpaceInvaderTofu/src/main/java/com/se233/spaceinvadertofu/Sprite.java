@@ -31,15 +31,12 @@ public class Sprite {
     }
 
     public void setImage(String filename) {
-        //Image i = new Image(getClass().getResource(filename).toExternalForm());
+        //Image i = new Image(getClass().getResource(filename).toExternalForm());;
 
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        InputStream inputStream = classLoader.getResourceAsStream(filename);
+//        System.out.println("inputStream: " + inputStream);
 
-        System.out.println("inputStream: " + inputStream);
-
-        Image i = new Image(inputStream);
-        Image toReturn = new Image(filename, i.getWidth()/3, i.getHeight()/3, true, false);
+        Image i = new Image(HelloApplication.class.getResource(filename).toExternalForm());
+        Image toReturn = new Image(HelloApplication.class.getResource(filename).toExternalForm(), i.getWidth()/3, i.getHeight()/3, true, false);
         setImage(toReturn);
     }
 
